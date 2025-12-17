@@ -4,9 +4,9 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
         Console.WriteLine("=== Лабораторная работа: Анализ производительности коллекций ===\n");
 
@@ -32,7 +32,7 @@ class Program
     }
 
     // ========== List<int> ==========
-    static void TestList(int elementsCount, int repeatTests)
+    private static void TestList(int elementsCount, int repeatTests)
     {
         var addTimes = new List<TimeSpan>();
         var addFirstTimes = new List<TimeSpan>();
@@ -115,7 +115,7 @@ class Program
     }
 
     // ========== LinkedList<int> ==========
-    static void TestLinkedList(int elementsCount, int repeatTests)
+    private static void TestLinkedList(int elementsCount, int repeatTests)
     {
         var addTimes = new List<TimeSpan>();
         var addFirstTimes = new List<TimeSpan>();
@@ -194,7 +194,7 @@ class Program
     }
 
     // ========== Queue<int> ==========
-    static void TestQueue(int elementsCount, int repeatTests)
+    private static void TestQueue(int elementsCount, int repeatTests)
     {
         var enqueueTimes = new List<TimeSpan>();
         var dequeueTimes = new List<TimeSpan>();
@@ -234,7 +234,7 @@ class Program
     }
 
     // ========== Stack<int> ==========
-    static void TestStack(int elementsCount, int repeatTests)
+    private static void TestStack(int elementsCount, int repeatTests)
     {
         var pushTimes = new List<TimeSpan>();
         var popTimes = new List<TimeSpan>();
@@ -274,7 +274,7 @@ class Program
     }
 
     // ========== ImmutableList<int> ==========
-    static void TestImmutableList(int elementsCount, int repeatTests)
+    private static void TestImmutableList(int elementsCount, int repeatTests)
     {
         var addTimes = new List<TimeSpan>();
         var addFirstTimes = new List<TimeSpan>();
@@ -381,7 +381,7 @@ class Program
     }
 
     
-    static TimeSpan MeasureTime(Action action)
+    private static TimeSpan MeasureTime(Action action)
     {
         var stopwatch = Stopwatch.StartNew();
         action();
@@ -389,7 +389,7 @@ class Program
         return stopwatch.Elapsed;
     }
 
-    static void PrintResults(string operation, List<TimeSpan> times)
+    private static void PrintResults(string operation, List<TimeSpan> times)
     {
         if (times.Count == 0) return;
 
@@ -404,7 +404,7 @@ class Program
         Console.WriteLine($"    Тестов: {times.Count}");
     }
 
-    static LinkedListNode<int> GetMiddleNode(LinkedList<int> list)
+    private static LinkedListNode<int> GetMiddleNode(LinkedList<int> list)
     {
         if (list.Count == 0) return null;
 

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "RTVoeYdJfEnSFzq68gmy/r7RIoMryPkAjCXPq4IyghztDsZeZkgseSo495FtNUwifmLi1eay5fuMcqvL/QgVpg==",
+  "success": true,
+  "projectFilePath": "/home/artwox/workplace/Csharp/DTYUI1/Tikhonov/labs/lab02/CollectionsPerf/CollectionsPerf.csproj",
+  "expectedPackageFiles": [
+    "/home/artwox/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
+    "/home/artwox/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
