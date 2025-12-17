@@ -46,7 +46,7 @@ class Program
         Console.WriteLine($"Contains(30) = {list.Contains(30)} (ожидается true)");
         Console.WriteLine($"IndexOf(25) = {list.IndexOf(25)} (ожидается 1)");
 
-        Console.WriteLine("✅ MyList тест пройден");
+        Console.WriteLine(" MyList тест пройден");
     }
 
     static void Test2_MyDictionary()
@@ -77,7 +77,7 @@ class Program
         Console.WriteLine($"После удаления \"one\": Count = {dict.Count} (ожидается 2)");
         Console.WriteLine($"ContainsKey(\"one\") = {dict.ContainsKey("one")} (ожидается false)");
 
-        Console.WriteLine("✅ MyDictionary тест пройден");
+        Console.WriteLine("MyDictionary тест пройден");
     }
 
     static void Test3_Integration()
@@ -102,6 +102,6 @@ class Program
         Console.WriteLine($"list[0][\"b\"] = {list[0]["b"]} (ожидается 2)");
         Console.WriteLine($"list[1][\"y\"] = {list[1]["y"]} (ожидается 20)");
 
-        Console.WriteLine("✅ Интеграционный тест пройден");
+        Console.WriteLine(" Интеграционный тест пройден");
     }
 }
