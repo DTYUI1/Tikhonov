@@ -1,0 +1,4 @@
+﻿[2025-12-17 00:06:22] LoadFromFile: /tmp/no_such_2585444c-b839-4f7f-b6a2-630d78f687ae.json: Файл не найден: /tmp/no_such_2585444c-b839-4f7f-b6a2-630d78f687ae.json
+   at PersonSerializer.LoadFromFile(String filePath) in /home/artwox/workplace/Csharp/DTYUI1/Tikhonov/labs/lab01/ConsoleApp1/PersonSerializer.cs:line 70
+[2025-12-17 11:31:29] LoadFromFile: /tmp/no_such_415f86f3-5311-479b-b4b5-4afc5255c1e1.json: Файл не найден: /tmp/no_such_415f86f3-5311-479b-b4b5-4afc5255c1e1.json
+   at PersonSerializer.LoadFromFile(String filePath) in /home/artwox/workplace/Csharp/DTYUI1/Tikhonov/labs/lab01/ConsoleApp1/PersonSerializer.cs:line 70
