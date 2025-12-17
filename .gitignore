@@ -1,45 +1,62 @@
-# Исключить ВСЕ папки bin и obj
+# Основное правило: исключить ВСЕ папки bin и obj в любой вложенности
 **/bin/
 **/obj/
 
-# Исключить временные и системные файлы
+# Исключить все NuGet пакеты (папки packages)
+**/packages/
+
+# Исключить бинарные файлы сборки
+*.dll
+*.pdb
+*.exe
+*.so
+*.dylib
+*.runtimeconfig.json
+*.deps.json
+
+# Исключить временные файлы Visual Studio
 *.user
 *.suo
 *.userprefs
 *.csproj.user
+*.sln.docstates
 .vs/
 .vscode/
 .idea/
-*.iml
-*.swp
-*.swo
-*.log
 
-# Исключить файлы сборки и пакеты
-*.dll
-*.pdb
-*.exe
-*.runtimeconfig.json
-*.deps.json
-*.nupkg
-*.snupkg
-*.cache
-*.binlog
-
-# Исключить результаты тестов
+# Исключить файлы тестовых фреймворков
 *.trx
 *.coverage
 *.coveragexml
 TestResults/
 [Tt]est[Rr]esult*/
 
+# Исключить кэш-файлы NuGet и сборки
+*.cache
+*.binlog
+*.nupkg
+*.snupkg
+
 # Исключить системные файлы
 .DS_Store
 Thumbs.db
 desktop.ini
+*.swp
+*.swo
+*.log
+error.log
 
 # Исключить резервные копии
 *.bak
 *.backup
 ~*
 *~
+
+# Исключить файлы конфигурации среды (если есть)
+.env
+.env.local
+
+# Исключить временные файлы проекта
+*.pidb
+*.ide/
+_ReSharper.*/
