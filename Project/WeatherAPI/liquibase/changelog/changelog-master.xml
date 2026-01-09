@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <include file="changelog/changes/001-create-users-table.xml"/>
+    <include file="changelog/changes/002-create-api-keys-table.xml"/>
+    <include file="changelog/changes/003-create-cities-table.xml"/>
+    <include file="changelog/changes/004-create-weather-types-table.xml"/>
+    <include file="changelog/changes/005-create-weather-records-table.xml"/>
+    <include file="changelog/changes/006-create-city-weather-types-table.xml"/>
+    <include file="changelog/changes/007-create-idempotency-keys-table.xml"/>
+    <include file="changelog/changes/008-seed-initial-data.xml"/>
+
+</databaseChangeLog>

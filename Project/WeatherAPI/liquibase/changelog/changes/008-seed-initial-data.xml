@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="008-seed-initial-data" author="developer">
+        <!-- Admin user (password: Admin123!) -->
+        <insert tableName="users">
+            <column name="id" value="a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"/>
+            <column name="email" value="admin@weather.api"/>
+            <column name="password_hash" value="B5+zYETx8SFZS/oIBOJJm5SL5t+KRAjMsViIfABacKo="/>
+            <column name="first_name" value="Admin"/>
+            <column name="last_name" value="User"/>
+            <column name="role" value="Admin"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+        <!-- Manager user (password: Manager123!) -->
+        <insert tableName="users">
+            <column name="id" value="b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22"/>
+            <column name="email" value="manager@weather.api"/>
+            <column name="password_hash" value="kD0ySqbJqHAtau5q8CSQTbv3PIU8MNcb3iM6xXkuo7U="/>
+            <column name="first_name" value="Manager"/>
+            <column name="last_name" value="User"/>
+            <column name="role" value="Manager"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+        <!-- Regular user (password: User123!) -->
+        <insert tableName="users">
+            <column name="id" value="c0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33"/>
+            <column name="email" value="user@weather.api"/>
+            <column name="password_hash" value="w4HQM6ndCsNA5LpGdYwEorP11D7GFXOzCCkQE84LMgk="/>
+            <column name="first_name" value="Regular"/>
+            <column name="last_name" value="User"/>
+            <column name="role" value="User"/>
+            <column name="is_active" valueBoolean="true"/>
+        </insert>
+
+        <!-- Weather Types -->
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="name" value="Sunny"/>
+            <column name="description" value="Clear sky with bright sunshine"/>
+            <column name="icon_code" value="01d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a02"/>
+            <column name="name" value="Cloudy"/>
+            <column name="description" value="Overcast with clouds"/>
+            <column name="icon_code" value="03d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="name" value="Rainy"/>
+            <column name="description" value="Rain showers"/>
+            <column name="icon_code" value="10d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a04"/>
+            <column name="name" value="Snowy"/>
+            <column name="description" value="Snow fall"/>
+            <column name="icon_code" value="13d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a05"/>
+            <column name="name" value="Stormy"/>
+            <column name="description" value="Thunderstorm with lightning"/>
+            <column name="icon_code" value="11d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a06"/>
+            <column name="name" value="Foggy"/>
+            <column name="description" value="Low visibility due to fog"/>
+            <column name="icon_code" value="50d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a07"/>
+            <column name="name" value="Windy"/>
+            <column name="description" value="Strong winds"/>
+            <column name="icon_code" value="50d"/>
+        </insert>
+
+        <insert tableName="weather_types">
+            <column name="id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a08"/>
+            <column name="name" value="Partly Cloudy"/>
+            <column name="description" value="Mix of sun and clouds"/>
+            <column name="icon_code" value="02d"/>
+        </insert>
+
+        <!-- Cities -->
+        <insert tableName="cities">
+            <column name="id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="name" value="Moscow"/>
+            <column name="country" value="Russia"/>
+            <column name="latitude" valueNumeric="55.7558"/>
+            <column name="longitude" valueNumeric="37.6173"/>
+            <column name="timezone" value="Europe/Moscow"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a02"/>
+            <column name="name" value="Saint Petersburg"/>
+            <column name="country" value="Russia"/>
+            <column name="latitude" valueNumeric="59.9343"/>
+            <column name="longitude" valueNumeric="30.3351"/>
+            <column name="timezone" value="Europe/Moscow"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="name" value="London"/>
+            <column name="country" value="United Kingdom"/>
+            <column name="latitude" valueNumeric="51.5074"/>
+            <column name="longitude" valueNumeric="-0.1278"/>
+            <column name="timezone" value="Europe/London"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a04"/>
+            <column name="name" value="New York"/>
+            <column name="country" value="USA"/>
+            <column name="latitude" valueNumeric="40.7128"/>
+            <column name="longitude" valueNumeric="-74.0060"/>
+            <column name="timezone" value="America/New_York"/>
+        </insert>
+
+        <insert tableName="cities">
+            <column name="id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a05"/>
+            <column name="name" value="Tokyo"/>
+            <column name="country" value="Japan"/>
+            <column name="latitude" valueNumeric="35.6762"/>
+            <column name="longitude" valueNumeric="139.6503"/>
+            <column name="timezone" value="Asia/Tokyo"/>
+        </insert>
+
+        <!-- City Weather Types (Many-to-Many) -->
+        <insert tableName="city_weather_types">
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a04"/>
+            <column name="frequency" valueNumeric="40"/>
+            <column name="season" value="Winter"/>
+        </insert>
+
+        <insert tableName="city_weather_types">
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="frequency" valueNumeric="30"/>
+            <column name="season" value="Summer"/>
+        </insert>
+
+        <insert tableName="city_weather_types">
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="frequency" valueNumeric="45"/>
+            <column name="season" value="All"/>
+        </insert>
+
+        <insert tableName="city_weather_types">
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a06"/>
+            <column name="frequency" valueNumeric="25"/>
+            <column name="season" value="Autumn"/>
+        </insert>
+
+        <!-- Sample Weather Records -->
+        <insert tableName="weather_records">
+            <column name="id" value="30eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a01"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a02"/>
+            <column name="recorded_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="temperature" valueNumeric="15.5"/>
+            <column name="feels_like" valueNumeric="14.0"/>
+            <column name="humidity" valueNumeric="65"/>
+            <column name="wind_speed" valueNumeric="5.5"/>
+            <column name="wind_direction" valueNumeric="180"/>
+            <column name="pressure" valueNumeric="1013"/>
+            <column name="visibility" valueNumeric="10000"/>
+        </insert>
+
+        <insert tableName="weather_records">
+            <column name="id" value="30eebc99-9c0b-4ef8-bb6d-6bb9bd380a02"/>
+            <column name="city_id" value="20eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="weather_type_id" value="10eebc99-9c0b-4ef8-bb6d-6bb9bd380a03"/>
+            <column name="recorded_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="temperature" valueNumeric="12.0"/>
+            <column name="feels_like" valueNumeric="10.5"/>
+            <column name="humidity" valueNumeric="80"/>
+            <column name="wind_speed" valueNumeric="8.0"/>
+            <column name="wind_direction" valueNumeric="270"/>
+            <column name="pressure" valueNumeric="1008"/>
+            <column name="visibility" valueNumeric="5000"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

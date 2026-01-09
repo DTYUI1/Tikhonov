@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="006-create-city-weather-types-table" author="developer">
+        <createTable tableName="city_weather_types">
+            <column name="city_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="weather_type_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="frequency" type="INTEGER" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="season" type="VARCHAR(20)"/>
+        </createTable>
+
+        <addPrimaryKey
+            tableName="city_weather_types"
+            columnNames="city_id, weather_type_id"
+            constraintName="pk_city_weather_types"/>
+
+        <addForeignKeyConstraint
+            baseTableName="city_weather_types"
+            baseColumnNames="city_id"
+            constraintName="fk_city_weather_types_city"
+            referencedTableName="cities"
+            referencedColumnNames="id"
+            onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint
+            baseTableName="city_weather_types"
+            baseColumnNames="weather_type_id"
+            constraintName="fk_city_weather_types_weather_type"
+            referencedTableName="weather_types"
+            referencedColumnNames="id"
+            onDelete="CASCADE"/>
+
+        <createIndex tableName="city_weather_types" indexName="idx_city_weather_types_city">
+            <column name="city_id"/>
+        </createIndex>
+
+        <createIndex tableName="city_weather_types" indexName="idx_city_weather_types_weather_type">
+            <column name="weather_type_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
