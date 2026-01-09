@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="005-create-weather-records-table" author="developer">
+        <createTable tableName="weather_records">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="city_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="weather_type_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="recorded_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="feels_like" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="humidity" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wind_speed" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wind_direction" type="INTEGER"/>
+            <column name="pressure" type="INTEGER"/>
+            <column name="visibility" type="INTEGER"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+            baseTableName="weather_records"
+            baseColumnNames="city_id"
+            constraintName="fk_weather_records_city"
+            referencedTableName="cities"
+            referencedColumnNames="id"
+            onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint
+            baseTableName="weather_records"
+            baseColumnNames="weather_type_id"
+            constraintName="fk_weather_records_weather_type"
+            referencedTableName="weather_types"
+            referencedColumnNames="id"
+            onDelete="RESTRICT"/>
+
+        <createIndex tableName="weather_records" indexName="idx_weather_records_city_recorded">
+            <column name="city_id"/>
+            <column name="recorded_at"/>
+        </createIndex>
+
+        <createIndex tableName="weather_records" indexName="idx_weather_records_recorded_at">
+            <column name="recorded_at"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>
